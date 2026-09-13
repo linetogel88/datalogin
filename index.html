@@ -3,399 +3,253 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="theme-color" content="#120a1f">
-<title>Data Login LiveChat INC</title>
+<meta name="theme-color" content="#12091f">
+<title>LINETOGEL Direct Link</title>
+
 <style>
-:root{
-  --bg:#0c0714;
-  --panel:#151020;
-  --panel2:#1d1530;
-  --line:#3a2856;
-  --purple:#8b5cf6;
-  --purple2:#6d28d9;
-  --text:#ffffff;
-  --muted:#a99bbd;
-  --green:#22c55e;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{min-height:100%}
+
 body{
+  min-height:100vh;
   font-family:Arial,Helvetica,sans-serif;
   background:
-    radial-gradient(circle at top right, rgba(139,92,246,.14), transparent 34%),
-    linear-gradient(180deg,#0b0712,#10091a 60%,#0b0712);
-  color:var(--text);
-  padding-bottom:26px;
+    radial-gradient(circle at top right,rgba(139,92,246,.18),transparent 35%),
+    linear-gradient(180deg,#0b0712,#12091f 60%,#0b0712);
+  color:#fff;
+  padding:18px 14px 30px;
   -webkit-tap-highlight-color:transparent;
 }
+
+.wrapper{
+  width:100%;
+  max-width:520px;
+  margin:0 auto;
+}
+
 .header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  padding:16px 14px 14px;
-  background:rgba(12,7,20,.96);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid #2f2043;
+  text-align:center;
+  margin-bottom:20px;
 }
-.top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-}
-.title-wrap{min-width:0}
-.title{
-  font-size:20px;
-  font-weight:900;
-  letter-spacing:.2px;
-}
-.subtitle{
-  margin-top:4px;
-  color:var(--muted);
-  font-size:12px;
-}
-.open-main{
-  border:none;
-  border-radius:11px;
-  padding:11px 13px;
-  background:linear-gradient(135deg,var(--purple),var(--purple2));
-  color:white;
-  font-weight:800;
-  font-size:12px;
-  white-space:nowrap;
-}
-.search{
-  margin-top:13px;
-  display:flex;
-  gap:8px;
-}
-.search input{
-  flex:1;
-  height:47px;
-  border-radius:12px;
-  border:1px solid #35254c;
-  background:#171021;
-  color:white;
-  padding:0 14px;
-  font-size:15px;
-  outline:none;
-}
-.search input:focus{border-color:var(--purple)}
-.count{
-  min-width:58px;
+
+.logo{
+  width:58px;
+  height:58px;
+  margin:0 auto 12px;
+  border-radius:18px;
   display:flex;
   align-items:center;
   justify-content:center;
-  border-radius:12px;
-  background:#1e1430;
-  border:1px solid #3a2855;
-  color:#d7c8ff;
-  font-size:12px;
-  font-weight:800;
-}
-.container{
-  padding:12px;
-  max-width:720px;
-  margin:auto;
-}
-.card{
-  background:linear-gradient(145deg,#1a1227,#130d1e);
-  border:1px solid #35254a;
-  border-radius:16px;
-  padding:14px;
-  margin-bottom:12px;
-  box-shadow:0 10px 30px rgba(0,0,0,.22);
-}
-.card-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  margin-bottom:13px;
-}
-.name{
-  font-size:16px;
-  font-weight:900;
-}
-.badge{
-  padding:6px 9px;
-  background:#2a1941;
-  color:#cfb9ff;
-  border:1px solid #4e3273;
-  border-radius:999px;
-  font-size:10px;
-  font-weight:900;
-}
-.field{
-  background:#0e0916;
-  border:1px solid #2c203a;
-  border-radius:12px;
-  padding:11px;
-  margin-top:9px;
-}
-.label{
-  color:#887999;
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:.8px;
-  margin-bottom:7px;
-}
-.value-row{
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-.value{
-  flex:1;
-  min-width:0;
-  font-size:14px;
-  font-weight:700;
-  overflow-wrap:anywhere;
-}
-.masked{letter-spacing:2px}
-.icon-btn{
-  flex:0 0 auto;
-  min-width:42px;
-  height:38px;
-  border:none;
-  border-radius:9px;
-  background:#2a1d3b;
-  color:white;
-  font-size:16px;
-  font-weight:800;
-}
-.actions{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-  margin-top:12px;
-}
-.btn{
-  min-height:46px;
-  border:none;
-  border-radius:11px;
-  font-size:12px;
-  font-weight:900;
-}
-.copy-email{
-  background:#2b1f3c;
-  color:#e5d8ff;
-  border:1px solid #493365;
-}
-.copy-pass{
   background:linear-gradient(135deg,#8b5cf6,#6d28d9);
-  color:white;
+  box-shadow:0 12px 34px rgba(124,58,237,.3);
+  font-size:29px;
 }
-.login-btn{
-  grid-column:1/-1;
-  background:#14351f;
-  color:#b8f8c7;
-  border:1px solid #276a3b;
-}
-.btn:active,.icon-btn:active,.open-main:active{transform:scale(.97)}
-.empty{
-  display:none;
-  text-align:center;
-  color:#9587a8;
-  padding:60px 20px;
-}
-.toast{
-  position:fixed;
-  left:50%;
-  bottom:24px;
-  transform:translateX(-50%) translateY(90px);
-  background:white;
-  color:#111;
-  padding:12px 18px;
-  border-radius:11px;
-  font-size:13px;
+
+.title{
+  font-size:22px;
   font-weight:900;
-  box-shadow:0 10px 35px rgba(0,0,0,.4);
-  opacity:0;
-  transition:.22s ease;
-  z-index:999;
-  pointer-events:none;
 }
-.toast.show{
-  opacity:1;
-  transform:translateX(-50%) translateY(0);
-}
-.security-note{
-  color:#8f819f;
-  font-size:10px;
+
+.subtitle{
+  margin-top:6px;
+  color:#a89ab9;
+  font-size:12px;
   line-height:1.45;
-  text-align:center;
-  padding:4px 18px 0;
 }
-@media(max-width:380px){
-  .title{font-size:18px}
-  .open-main{padding:10px 10px;font-size:11px}
-  .container{padding:10px}
-  .card{padding:12px}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:11px;
+}
+
+.link-card{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:#fff;
+  min-height:72px;
+  padding:13px 14px;
+  border-radius:16px;
+  border:1px solid #3a2853;
+  background:linear-gradient(145deg,#1a1227,#130d1e);
+  box-shadow:0 9px 28px rgba(0,0,0,.22);
+  transition:.12s ease;
+}
+
+.link-card:active{
+  transform:scale(.98);
+  background:#21152f;
+}
+
+.icon{
+  flex:0 0 46px;
+  width:46px;
+  height:46px;
+  border-radius:13px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#2b1b43;
+  font-size:23px;
+}
+
+.info{
+  min-width:0;
+  flex:1;
+}
+
+.name{
+  font-size:15px;
+  font-weight:900;
+  margin-bottom:4px;
+}
+
+.url{
+  font-size:10px;
+  color:#9889aa;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.arrow{
+  color:#b69cff;
+  font-size:19px;
+  font-weight:900;
+}
+
+.master{
+  border-color:#6d43a3;
+  background:linear-gradient(145deg,#26153d,#150d22);
+}
+
+.footer{
+  margin-top:18px;
+  text-align:center;
+  color:#756983;
+  font-size:10px;
+  line-height:1.5;
+}
+
+@media(min-width:700px){
+  .grid{
+    grid-template-columns:1fr 1fr;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header class="header">
-  <div class="top">
-    <div class="title-wrap">
-      <div class="title">💬 DATA LOGIN LIVECHAT INC</div>
-      <div class="subtitle">Samsung A15 • 15 akun LiveChat</div>
+<div class="wrapper">
+
+  <div class="header">
+    <div class="logo">🔗</div>
+    <div class="title">LINETOGEL DIRECT LINK</div>
+    <div class="subtitle">
+      Pilih panel yang ingin dibuka.<br>
+      Sekali klik langsung menuju halaman website.
     </div>
-    <button class="open-main" onclick="openLiveChat()">BUKA LIVECHAT</button>
   </div>
 
-  <div class="search">
-    <input id="searchInput" type="text" placeholder="Cari CS / email..." autocomplete="off">
-    <div class="count" id="countBox">15/15</div>
+  <div class="grid">
+
+    <a class="link-card master"
+       href="https://my.livechatinc.com/home"
+       target="_blank"
+       rel="noopener noreferrer">
+      <div class="icon">💬</div>
+      <div class="info">
+        <div class="name">LiveChat INC</div>
+        <div class="url">my.livechatinc.com/home</div>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+
+    <a class="link-card"
+       href="http://smbaz6.zonamain.com"
+       target="_blank"
+       rel="noopener noreferrer">
+      <div class="icon">🎯</div>
+      <div class="info">
+        <div class="name">Zonamain</div>
+        <div class="url">smbaz6.zonamain.com</div>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+
+    <a class="link-card"
+       href="http://agwl2.admitoto.com/?passkey=WH9eRDBqtriK4pL"
+       target="_blank"
+       rel="noopener noreferrer">
+      <div class="icon">🛠️</div>
+      <div class="info">
+        <div class="name">Admin AGWL2</div>
+        <div class="url">agwl2.admitoto.com</div>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+
+    <a class="link-card"
+       href="https://backoffice.minerapay.com/dashboard"
+       target="_blank"
+       rel="noopener noreferrer">
+      <div class="icon">⛏️</div>
+      <div class="info">
+        <div class="name">Minerpay</div>
+        <div class="url">backoffice.minerapay.com/dashboard</div>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+
+    <a class="link-card"
+       href="https://m2qris.com/staff"
+       target="_blank"
+       rel="noopener noreferrer">
+      <div class="icon">💳</div>
+      <div class="info">
+        <div class="name">Xpay</div>
+        <div class="url">m2qris.com/staff</div>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+
+    <a class="link-card"
+       href="https://regq.idnlive.live/"
+       target="_blank"
+       rel="noopener noreferrer">
+      <div class="icon">🔄</div>
+      <div class="info">
+        <div class="name">Seamless</div>
+        <div class="url">regq.idnlive.live</div>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+
+    <a class="link-card"
+       href="https://adminmg.linesmb.com/"
+       target="_blank"
+       rel="noopener noreferrer">
+      <div class="icon">⚡</div>
+      <div class="info">
+        <div class="name">PWR</div>
+        <div class="url">adminmg.linesmb.com</div>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+
   </div>
-</header>
 
-<main class="container" id="loginList"></main>
-<div class="empty" id="emptyState">Data tidak ditemukan.</div>
+  <div class="footer">
+    Versi mobile • cocok untuk Samsung A15
+  </div>
 
-<div class="security-note">
-  File ini menyimpan login secara lokal di HTML. Jangan bagikan file ke orang lain.
 </div>
 
-<div class="toast" id="toast">Berhasil disalin</div>
-
-<script>
-const LIVECHAT_URL = "https://my.livechatinc.com/home";
-
-const loginData = [
-  { name: "💬 LiveChat CS 1",  email: "Linetgl1721@gmail.com",       password: "3377@48956@#$%*375469@NEWW" },
-  { name: "💬 LiveChat CS 2",  email: "linetogel888888.smb@gmail.com", password: "3377@48956@#$%*375469@NEWW" },
-  { name: "💬 LiveChat CS 3",  email: "Linetgl4646@gmail.com",       password: "3377@48956@#$%*375469@NEWW" },
-  { name: "💬 LiveChat CS 4",  email: "linetgl77@gmail.com",         password: "3377@48956@#$%*375469@NEWW" },
-  { name: "💬 LiveChat CS 5",  email: "linetgl888@gmail.com",        password: "3377@48956@#$%*375469@NEWW" },
-  { name: "💬 LiveChat CS 6",  email: "linetgl8888@gmail.com",       password: "3377@48956@#$%*375469@NEWW" },
-  { name: "💬 LiveChat CS 7",  email: "linetglsmb88@gmail.com",      password: "3377@48956@#$%*375469@NEWW" },
-  { name: "💬 LiveChat CS 8",  email: "Linetgl99@gmail.com",         password: "3377@48956@#$%*375469@NEWW" },
-  { name: "💬 LiveChat CS 9",  email: "linetgl.smb8888@gmail.com",   password: "3377@48956@#$%*375469@NEWW" },
-  { name: "💬 LiveChat CS 10", email: "linetgl888.smb@gmail.com",    password: "3377@48956@#$%*375469@NEWW" },
-  { name: "💬 LiveChat CS 11", email: "linetgl88811.smb@gmail.com",  password: "3377@48956@#$%*375469@NEWW" },
-  { name: "💬 LiveChat CS 12", email: "linetgl88812.smb@gmail.com",  password: "3377@48956@#$%*375469@NEWW" },
-  { name: "💬 LiveChat CS 13", email: "linetgl88813.smb@gmail.com",  password: "3377@48956@#$%*375469@NEWW" },
-  { name: "💬 LiveChat CS 14", email: "linetgl88814.smb@gmail.com",  password: "3377@48956@#$%*375469@NEWW" },
-  { name: "💬 LiveChat CS 15", email: "linetgl88815.smb@gmail.com",  password: "3377@48956@#$%*375469@NEWW" }
-];
-
-const list = document.getElementById("loginList");
-const searchInput = document.getElementById("searchInput");
-const emptyState = document.getElementById("emptyState");
-const countBox = document.getElementById("countBox");
-const toast = document.getElementById("toast");
-
-function escapeHtml(str){
-  return String(str)
-    .replaceAll("&","&amp;")
-    .replaceAll("<","&lt;")
-    .replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;")
-    .replaceAll("'","&#039;");
-}
-
-function render(data){
-  list.innerHTML = "";
-  countBox.textContent = `${data.length}/${loginData.length}`;
-  emptyState.style.display = data.length ? "none" : "block";
-
-  data.forEach(item => {
-    const idx = loginData.indexOf(item);
-    const card = document.createElement("section");
-    card.className = "card";
-
-    card.innerHTML = `
-      <div class="card-head">
-        <div class="name">${escapeHtml(item.name)}</div>
-        <div class="badge">LIVECHAT INC</div>
-      </div>
-
-      <div class="field">
-        <div class="label">EMAIL / USER LOGIN</div>
-        <div class="value-row">
-          <div class="value">${escapeHtml(item.email)}</div>
-          <button class="icon-btn" onclick="copyText(loginData[${idx}].email,'Email')">⧉</button>
-        </div>
-      </div>
-
-      <div class="field">
-        <div class="label">PASSWORD</div>
-        <div class="value-row">
-          <div class="value masked" id="pass-${idx}" data-visible="0">••••••••••••••••</div>
-          <button class="icon-btn" onclick="togglePassword(${idx})">👁</button>
-        </div>
-      </div>
-
-      <div class="actions">
-        <button class="btn copy-email" onclick="copyText(loginData[${idx}].email,'Email')">COPY EMAIL</button>
-        <button class="btn copy-pass" onclick="copyText(loginData[${idx}].password,'Password')">COPY PASSWORD</button>
-        <button class="btn login-btn" onclick="openAccount(${idx})">BUKA LOGIN LIVECHAT</button>
-      </div>
-    `;
-    list.appendChild(card);
-  });
-}
-
-function togglePassword(idx){
-  const el = document.getElementById(`pass-${idx}`);
-  const visible = el.dataset.visible === "1";
-  if(visible){
-    el.textContent = "••••••••••••••••";
-    el.dataset.visible = "0";
-    el.classList.add("masked");
-  }else{
-    el.textContent = loginData[idx].password;
-    el.dataset.visible = "1";
-    el.classList.remove("masked");
-  }
-}
-
-async function copyText(text, label){
-  try{
-    await navigator.clipboard.writeText(text);
-  }catch(e){
-    const ta = document.createElement("textarea");
-    ta.value = text;
-    ta.style.position = "fixed";
-    ta.style.opacity = "0";
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand("copy");
-    ta.remove();
-  }
-  showToast(`✓ ${label} berhasil disalin`);
-}
-
-function showToast(msg){
-  toast.textContent = msg;
-  toast.classList.add("show");
-  clearTimeout(window.__toastTimer);
-  window.__toastTimer = setTimeout(()=>toast.classList.remove("show"),1300);
-}
-
-function openLiveChat(){
-  window.open(LIVECHAT_URL, "_blank");
-}
-
-function openAccount(idx){
-  copyText(loginData[idx].email, "Email");
-  setTimeout(()=>window.open(LIVECHAT_URL, "_blank"), 180);
-}
-
-searchInput.addEventListener("input", ()=>{
-  const q = searchInput.value.toLowerCase().trim();
-  const filtered = loginData.filter(x =>
-    x.name.toLowerCase().includes(q) ||
-    x.email.toLowerCase().includes(q)
-  );
-  render(filtered);
-});
-
-render(loginData);
-</script>
 </body>
 </html>
