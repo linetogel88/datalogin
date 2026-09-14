@@ -2,143 +2,416 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="theme-color" content="#12091f">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+>
+
+<meta name="theme-color" content="#0b0712">
+
 <title>LINETOGEL Direct Link</title>
 
 <style>
-*{
+/* ================================
+   RESET
+================================ */
+*,
+*::before,
+*::after{
   box-sizing:border-box;
   margin:0;
   padding:0;
 }
 
-body{
-  min-height:100vh;
-  font-family:Arial,Helvetica,sans-serif;
-  background:
-    radial-gradient(circle at top right,rgba(139,92,246,.18),transparent 35%),
-    linear-gradient(180deg,#0b0712,#12091f 60%,#0b0712);
-  color:#fff;
-  padding:18px 14px 30px;
-  -webkit-tap-highlight-color:transparent;
+html{
+  width:100%;
+  min-height:100%;
+  overflow-x:hidden;
+  background:#0b0712;
 }
 
+body{
+  width:100%;
+  min-width:0;
+
+  min-height:100vh;
+  min-height:100dvh;
+
+  overflow-x:hidden;
+
+  font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  color:#fff;
+
+  background:
+    radial-gradient(
+      circle at 90% -5%,
+      rgba(139,92,246,.28),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at -10% 45%,
+      rgba(109,40,217,.14),
+      transparent 32%
+    ),
+    linear-gradient(
+      180deg,
+      #09050f 0%,
+      #12091f 48%,
+      #09050f 100%
+    );
+
+  padding-top:
+    max(18px, env(safe-area-inset-top));
+
+  padding-right:
+    max(10px, env(safe-area-inset-right));
+
+  padding-bottom:
+    max(28px, env(safe-area-inset-bottom));
+
+  padding-left:
+    max(10px, env(safe-area-inset-left));
+
+  -webkit-tap-highlight-color:transparent;
+  -webkit-text-size-adjust:100%;
+}
+
+/* ================================
+   WRAPPER
+================================ */
 .wrapper{
   width:100%;
-  max-width:520px;
+  max-width:560px;
+  min-width:0;
   margin:0 auto;
 }
 
+/* ================================
+   HEADER
+================================ */
 .header{
+  width:100%;
   text-align:center;
+  padding:7px 4px 0;
   margin-bottom:20px;
 }
 
 .logo{
-  width:58px;
-  height:58px;
-  margin:0 auto 12px;
-  border-radius:18px;
+  width:62px;
+  height:62px;
+
+  margin:0 auto 13px;
+
+  border-radius:19px;
+
   display:flex;
   align-items:center;
   justify-content:center;
-  background:linear-gradient(135deg,#8b5cf6,#6d28d9);
-  box-shadow:0 12px 34px rgba(124,58,237,.3);
-  font-size:29px;
+
+  font-size:30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #a78bfa 0%,
+      #7c3aed 50%,
+      #5b21b6 100%
+    );
+
+  border:1px solid rgba(255,255,255,.13);
+
+  box-shadow:
+    0 12px 32px rgba(124,58,237,.35),
+    inset 0 1px 0 rgba(255,255,255,.15);
 }
 
 .title{
   font-size:22px;
   font-weight:900;
+  letter-spacing:.3px;
+  line-height:1.2;
 }
 
 .subtitle{
-  margin-top:6px;
-  color:#a89ab9;
+  max-width:380px;
+  margin:7px auto 0;
+
+  color:#aa9bb9;
+
   font-size:12px;
-  line-height:1.45;
+  line-height:1.55;
 }
 
+/* ================================
+   GRID
+================================ */
 .grid{
+  width:100%;
+  min-width:0;
+
   display:grid;
-  grid-template-columns:1fr;
-  gap:11px;
+  grid-template-columns:minmax(0,1fr);
+
+  gap:10px;
 }
 
+/* ================================
+   CARD
+================================ */
 .link-card{
+  width:100%;
+  min-width:0;
+
   display:flex;
   align-items:center;
+
   gap:12px;
+
+  min-height:72px;
+
+  padding:12px 13px;
+
+  border-radius:17px;
+
+  border:1px solid rgba(124,90,161,.38);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(31,20,46,.98),
+      rgba(18,12,28,.98)
+    );
+
+  box-shadow:
+    0 8px 26px rgba(0,0,0,.22),
+    inset 0 1px 0 rgba(255,255,255,.025);
+
   text-decoration:none;
   color:#fff;
-  min-height:72px;
-  padding:13px 14px;
-  border-radius:16px;
-  border:1px solid #3a2853;
-  background:linear-gradient(145deg,#1a1227,#130d1e);
-  box-shadow:0 9px 28px rgba(0,0,0,.22);
-  transition:.12s ease;
+
+  position:relative;
+
+  overflow:hidden;
+
+  transition:
+    transform .12s ease,
+    border-color .12s ease,
+    background .12s ease;
+}
+
+.link-card::before{
+  content:"";
+
+  position:absolute;
+
+  width:110px;
+  height:110px;
+
+  top:-65px;
+  right:-55px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(139,92,246,.16),
+      transparent 70%
+    );
+
+  pointer-events:none;
 }
 
 .link-card:active{
-  transform:scale(.98);
-  background:#21152f;
+  transform:scale(.985);
+
+  border-color:#8054b5;
+
+  background:
+    linear-gradient(
+      145deg,
+      #28193a,
+      #181022
+    );
 }
 
+/* ================================
+   MASTER / FIRST CARD
+================================ */
+.master{
+  border-color:rgba(167,139,250,.52);
+
+  background:
+    linear-gradient(
+      145deg,
+      #291742,
+      #170e25
+    );
+
+  box-shadow:
+    0 10px 29px rgba(80,30,130,.24),
+    inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+/* ================================
+   ICON
+================================ */
 .icon{
-  flex:0 0 46px;
-  width:46px;
-  height:46px;
-  border-radius:13px;
+  flex:0 0 47px;
+
+  width:47px;
+  height:47px;
+
+  border-radius:14px;
+
   display:flex;
   align-items:center;
   justify-content:center;
-  background:#2b1b43;
+
   font-size:23px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #352050,
+      #251637
+    );
+
+  border:1px solid rgba(255,255,255,.055);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.04);
 }
 
+/* ================================
+   INFO
+================================ */
 .info{
-  min-width:0;
   flex:1;
+  min-width:0;
+  overflow:hidden;
 }
 
 .name{
+  margin-bottom:5px;
+
   font-size:15px;
   font-weight:900;
-  margin-bottom:4px;
-}
 
-.url{
-  font-size:10px;
-  color:#9889aa;
+  line-height:1.2;
+
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
 }
 
+.url{
+  display:block;
+
+  width:100%;
+
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+
+  color:#9787a9;
+
+  font-size:10px;
+  line-height:1.3;
+}
+
+/* ================================
+   ARROW
+================================ */
 .arrow{
-  color:#b69cff;
-  font-size:19px;
-  font-weight:900;
+  flex:0 0 20px;
+
+  width:20px;
+
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+
+  color:#c4a7ff;
+
+  font-size:22px;
+  font-weight:700;
 }
 
-.master{
-  border-color:#6d43a3;
-  background:linear-gradient(145deg,#26153d,#150d22);
-}
-
+/* ================================
+   FOOTER
+================================ */
 .footer{
-  margin-top:18px;
+  width:100%;
+
+  margin-top:20px;
+  padding:0 10px;
+
   text-align:center;
+
   color:#756983;
+
   font-size:10px;
   line-height:1.5;
 }
 
+/* ================================
+   SMALL MOBILE
+================================ */
+@media(max-width:360px){
+
+  body{
+    padding-left:
+      max(7px, env(safe-area-inset-left));
+
+    padding-right:
+      max(7px, env(safe-area-inset-right));
+  }
+
+  .link-card{
+    padding:11px 10px;
+    gap:10px;
+  }
+
+  .icon{
+    flex-basis:44px;
+    width:44px;
+    height:44px;
+  }
+
+  .name{
+    font-size:14px;
+  }
+
+  .title{
+    font-size:20px;
+  }
+}
+
+/* ================================
+   DESKTOP / TABLET
+================================ */
 @media(min-width:700px){
+
+  body{
+    padding-left:18px;
+    padding-right:18px;
+  }
+
+  .wrapper{
+    max-width:760px;
+  }
+
   .grid{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:
+      minmax(0,1fr)
+      minmax(0,1fr);
   }
 }
 </style>
@@ -148,129 +421,263 @@ body{
 
 <div class="wrapper">
 
+  <!-- HEADER -->
   <div class="header">
-    <div class="logo">🔗</div>
-    <div class="title">LINETOGEL DIRECT LINK</div>
+
+    <div class="logo">
+      🔗
+    </div>
+
+    <div class="title">
+      LINETOGEL DIRECT LINK
+    </div>
+
     <div class="subtitle">
       Pilih panel yang ingin dibuka.<br>
       Sekali klik langsung menuju halaman website.
     </div>
+
   </div>
 
+
+  <!-- GRID -->
   <div class="grid">
 
-    <a class="link-card master"
-       href="https://my.livechatinc.com/home"
-       target="_blank"
-       rel="noopener noreferrer">
+    <!-- LIVECHAT -->
+    <a
+      class="link-card master"
+      href="https://my.livechatinc.com/home"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <div class="icon">💬</div>
+
       <div class="info">
-        <div class="name">LiveChat INC</div>
-        <div class="url">my.livechatinc.com/home</div>
+        <div class="name">
+          LiveChat INC
+        </div>
+
+        <div class="url">
+          my.livechatinc.com/home
+        </div>
       </div>
+
       <div class="arrow">›</div>
     </a>
 
-    <a class="link-card"
-       href="http://smbaz6.zonamain.com"
-       target="_blank"
-       rel="noopener noreferrer">
+
+    <!-- DASHBOARD CHAT -->
+    <a
+      class="link-card master"
+      href="https://linetogel.hokibgs.com/modules/cs/dashboard.php"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div class="icon">🗨️</div>
+
+      <div class="info">
+        <div class="name">
+          Dashboard Chat
+        </div>
+
+        <div class="url">
+          linetogel.hokibgs.com/modules/cs/dashboard.php
+        </div>
+      </div>
+
+      <div class="arrow">›</div>
+    </a>
+
+
+    <!-- ZONAMAIN -->
+    <a
+      class="link-card"
+      href="http://smbaz6.zonamain.com"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <div class="icon">🎯</div>
+
       <div class="info">
-        <div class="name">Zonamain</div>
-        <div class="url">smbaz6.zonamain.com</div>
+        <div class="name">
+          Zonamain
+        </div>
+
+        <div class="url">
+          smbaz6.zonamain.com
+        </div>
       </div>
+
       <div class="arrow">›</div>
     </a>
 
-    <a class="link-card"
-       href="http://agwl2.admitoto.com/?passkey=WH9eRDBqtriK4pL"
-       target="_blank"
-       rel="noopener noreferrer">
+
+    <!-- AGWL2 -->
+    <a
+      class="link-card"
+      href="http://agwl2.admitoto.com/?passkey=WH9eRDBqtriK4pL"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <div class="icon">🛠️</div>
+
       <div class="info">
-        <div class="name">Admin AGWL2</div>
-        <div class="url">agwl2.admitoto.com</div>
+        <div class="name">
+          Admin AGWL2
+        </div>
+
+        <div class="url">
+          agwl2.admitoto.com
+        </div>
       </div>
+
       <div class="arrow">›</div>
     </a>
 
-    <a class="link-card"
-       href="https://backoffice.minerapay.com/dashboard"
-       target="_blank"
-       rel="noopener noreferrer">
+
+    <!-- MINERAPAY -->
+    <a
+      class="link-card"
+      href="https://backoffice.minerapay.com/dashboard"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <div class="icon">⛏️</div>
+
       <div class="info">
-        <div class="name">Minerpay</div>
-        <div class="url">backoffice.minerapay.com/dashboard</div>
+        <div class="name">
+          Minerpay
+        </div>
+
+        <div class="url">
+          backoffice.minerapay.com/dashboard
+        </div>
       </div>
+
       <div class="arrow">›</div>
     </a>
 
-    <a class="link-card"
-       href="https://m2qris.com/staff"
-       target="_blank"
-       rel="noopener noreferrer">
+
+    <!-- XPAY -->
+    <a
+      class="link-card"
+      href="https://m2qris.com/staff"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <div class="icon">💳</div>
+
       <div class="info">
-        <div class="name">Xpay</div>
-        <div class="url">m2qris.com/staff</div>
+        <div class="name">
+          Xpay
+        </div>
+
+        <div class="url">
+          m2qris.com/staff
+        </div>
       </div>
+
       <div class="arrow">›</div>
     </a>
 
-    <a class="link-card"
-       href="https://regq.idnlive.live/"
-       target="_blank"
-       rel="noopener noreferrer">
+
+    <!-- SEAMLESS -->
+    <a
+      class="link-card"
+      href="https://regq.idnlive.live/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <div class="icon">🔄</div>
+
       <div class="info">
-        <div class="name">Seamless</div>
-        <div class="url">regq.idnlive.live</div>
+        <div class="name">
+          Seamless
+        </div>
+
+        <div class="url">
+          regq.idnlive.live
+        </div>
       </div>
+
       <div class="arrow">›</div>
     </a>
 
-    <a class="link-card"
-       href="https://adminmg.linesmb.com/"
-       target="_blank"
-       rel="noopener noreferrer">
+
+    <!-- PWR -->
+    <a
+      class="link-card"
+      href="https://adminmg.linesmb.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <div class="icon">⚡</div>
+
       <div class="info">
-        <div class="name">PWR</div>
-        <div class="url">adminmg.linesmb.com</div>
+        <div class="name">
+          PWR
+        </div>
+
+        <div class="url">
+          adminmg.linesmb.com
+        </div>
       </div>
+
       <div class="arrow">›</div>
     </a>
 
-    <a class="link-card"
-       href="https://bk.augipt.com/linetogel/mutasi/suksesbugil/deposit/waiting/all"
-       target="_blank"
-       rel="noopener noreferrer">
+
+    <!-- LOGIN BK -->
+    <a
+      class="link-card"
+      href="https://bk.augipt.com/linetogel/mutasi/suksesbugil/deposit/waiting/all"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <div class="icon">🏦</div>
+
       <div class="info">
-        <div class="name">Login BK</div>
-        <div class="url">bk.augipt.com/linetogel/mutasi/suksesbugil/deposit/waiting/all</div>
+        <div class="name">
+          Login BK
+        </div>
+
+        <div class="url">
+          bk.augipt.com/linetogel/mutasi/suksesbugil/deposit/waiting/all
+        </div>
       </div>
+
       <div class="arrow">›</div>
     </a>
 
-    <a class="link-card"
-       href="https://bonussmb.com/"
-       target="_blank"
-       rel="noopener noreferrer">
+
+    <!-- BONUS -->
+    <a
+      class="link-card"
+      href="https://bonussmb.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <div class="icon">🎁</div>
+
       <div class="info">
-        <div class="name">Dashboard Bonus</div>
-        <div class="url">bonussmb.com</div>
+        <div class="name">
+          Dashboard Bonus
+        </div>
+
+        <div class="url">
+          bonussmb.com
+        </div>
       </div>
+
       <div class="arrow">›</div>
     </a>
 
   </div>
 
+
+  <!-- FOOTER -->
   <div class="footer">
-    Versi mobile • cocok untuk Samsung A15
+    LINETOGEL • Mobile Direct Access
   </div>
 
 </div>
