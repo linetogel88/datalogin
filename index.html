@@ -5,7 +5,7 @@
 
 <meta
   name="viewport"
-  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+  content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover"
 >
 
 <meta name="theme-color" content="#0b0712">
@@ -158,7 +158,7 @@ body{
   display:grid;
   grid-template-columns:minmax(0,1fr);
 
-  gap:10px;
+  gap:8px;
 }
 
 /* ================================
@@ -173,9 +173,9 @@ body{
 
   gap:12px;
 
-  min-height:72px;
+  min-height:64px;
 
-  padding:12px 13px;
+  padding:10px 12px;
 
   border-radius:17px;
 
@@ -263,10 +263,10 @@ body{
    ICON
 ================================ */
 .icon{
-  flex:0 0 47px;
+  flex:0 0 42px;
 
-  width:47px;
-  height:47px;
+  width:42px;
+  height:42px;
 
   border-radius:14px;
 
@@ -274,7 +274,7 @@ body{
   align-items:center;
   justify-content:center;
 
-  font-size:23px;
+  font-size:21px;
 
   background:
     linear-gradient(
@@ -301,7 +301,7 @@ body{
 .name{
   margin-bottom:5px;
 
-  font-size:15px;
+  font-size:14px;
   font-weight:900;
 
   line-height:1.2;
@@ -360,6 +360,127 @@ body{
   font-size:10px;
   line-height:1.5;
 }
+
+/* ================================
+   SEARCH + VIEW CONTROLS
+================================ */
+.tools{
+  position:sticky;
+  top:max(8px, env(safe-area-inset-top));
+  z-index:20;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:0 0 14px;
+  padding:8px;
+  border:1px solid rgba(124,90,161,.34);
+  border-radius:16px;
+  background:rgba(13,8,21,.88);
+  box-shadow:0 10px 28px rgba(0,0,0,.28);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+}
+
+.search-box{
+  flex:1;
+  min-width:0;
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+
+.search-icon{
+  position:absolute;
+  left:12px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:15px;
+  opacity:.72;
+  pointer-events:none;
+}
+
+#searchInput{
+  width:100%;
+  height:42px;
+  padding:0 42px 0 36px;
+  border:1px solid rgba(167,139,250,.28);
+  border-radius:12px;
+  outline:none;
+  background:#160e21;
+  color:#fff;
+  font-size:13px;
+  font-weight:700;
+}
+
+#searchInput:focus{
+  border-color:#8b5cf6;
+  box-shadow:0 0 0 3px rgba(139,92,246,.14);
+}
+
+#searchInput::placeholder{
+  color:#837391;
+}
+
+.clear-search{
+  position:absolute;
+  right:6px;
+  top:50%;
+  transform:translateY(-50%);
+  width:30px;
+  height:30px;
+  border:0;
+  border-radius:9px;
+  background:transparent;
+  color:#cbb7dd;
+  font-size:22px;
+  line-height:1;
+  cursor:pointer;
+  display:none;
+}
+
+.clear-search.show{ display:block; }
+.clear-search:active{ background:rgba(255,255,255,.07); }
+
+.zoom-controls{
+  flex:0 0 auto;
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+
+.zoom-btn{
+  width:36px;
+  height:36px;
+  border:1px solid rgba(167,139,250,.25);
+  border-radius:10px;
+  background:#21132f;
+  color:#fff;
+  font-size:20px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.zoom-btn:active{ transform:scale(.95); }
+
+.zoom-level{
+  min-width:42px;
+  text-align:center;
+  color:#aa9bb9;
+  font-size:10px;
+  font-weight:800;
+}
+
+.no-results{
+  display:none;
+  padding:26px 14px;
+  border:1px dashed rgba(167,139,250,.28);
+  border-radius:16px;
+  text-align:center;
+  color:#9d8bab;
+  font-size:12px;
+}
+
+.no-results.show{ display:block; }
 
 /* ================================
    SMALL MOBILE
@@ -439,6 +560,21 @@ body{
 
   </div>
 
+
+  <!-- SEARCH + ZOOM -->
+  <div class="tools">
+    <div class="search-box">
+      <span class="search-icon">⌕</span>
+      <input id="searchInput" type="search" inputmode="search" autocomplete="off" placeholder="Cari panel, dashboard, memo, result...">
+      <button id="clearSearch" class="clear-search" type="button" aria-label="Hapus pencarian">×</button>
+    </div>
+
+    <div class="zoom-controls" aria-label="Kontrol ukuran tampilan">
+      <button id="zoomOut" class="zoom-btn" type="button" title="Zoom out">−</button>
+      <div id="zoomLevel" class="zoom-level">90%</div>
+      <button id="zoomIn" class="zoom-btn" type="button" title="Zoom in">+</button>
+    </div>
+  </div>
 
   <!-- GRID -->
   <div class="grid">
@@ -787,6 +923,48 @@ body{
       <div class="arrow">›</div>
     </a>
 
+
+    <!-- GENERATOR SYAIR -->
+    <a class="link-card" href="https://syairlinetogel.kesug.com/" target="_blank" rel="noopener noreferrer">
+      <div class="icon">✍️</div>
+      <div class="info">
+        <div class="name">Generator Syair</div>
+        <div class="url">syairlinetogel.kesug.com</div>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+
+    <!-- INCLUDE -->
+    <a class="link-card" href="https://include-vipqris.vercel.app/" target="_blank" rel="noopener noreferrer">
+      <div class="icon">🧩</div>
+      <div class="info">
+        <div class="name">Include</div>
+        <div class="url">include-vipqris.vercel.app</div>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+
+    <!-- KEPERLUAN MEMO -->
+    <a class="link-card" href="https://bacoud97.page.gd/" target="_blank" rel="noopener noreferrer">
+      <div class="icon">📝</div>
+      <div class="info">
+        <div class="name">Keperluan Memo</div>
+        <div class="url">bacoud97.page.gd</div>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+
+    <!-- HASIL RESULT -->
+    <a class="link-card" href="https://hasil-result-tgl.vercel.app/" target="_blank" rel="noopener noreferrer">
+      <div class="icon">📊</div>
+      <div class="info">
+        <div class="name">Hasil Result</div>
+        <div class="url">hasil-result-tgl.vercel.app</div>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+
+    <div id="noResults" class="no-results">Panel tidak ditemukan.</div>
   </div>
 
 
@@ -796,6 +974,70 @@ body{
   </div>
 
 </div>
+
+<script>
+(() => {
+  const searchInput = document.getElementById('searchInput');
+  const clearSearch = document.getElementById('clearSearch');
+  const cards = [...document.querySelectorAll('.link-card')];
+  const noResults = document.getElementById('noResults');
+  const zoomOut = document.getElementById('zoomOut');
+  const zoomIn = document.getElementById('zoomIn');
+  const zoomLevel = document.getElementById('zoomLevel');
+
+  function filterCards(){
+    const q = searchInput.value.trim().toLowerCase();
+    let visible = 0;
+
+    cards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      const show = !q || text.includes(q);
+      card.style.display = show ? '' : 'none';
+      if(show) visible++;
+    });
+
+    clearSearch.classList.toggle('show', q.length > 0);
+    noResults.classList.toggle('show', visible === 0);
+  }
+
+  searchInput.addEventListener('input', filterCards);
+  searchInput.addEventListener('search', filterCards);
+
+  clearSearch.addEventListener('click', () => {
+    searchInput.value = '';
+    filterCards();
+    searchInput.focus();
+  });
+
+  const MIN_ZOOM = 70;
+  const MAX_ZOOM = 110;
+  const STEP = 10;
+  let zoom = Number(localStorage.getItem('linetogelDirectZoom')) || 90;
+  zoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, zoom));
+
+  function applyZoom(){
+    document.body.style.zoom = (zoom / 100);
+    zoomLevel.textContent = zoom + '%';
+    localStorage.setItem('linetogelDirectZoom', String(zoom));
+    zoomOut.disabled = zoom <= MIN_ZOOM;
+    zoomIn.disabled = zoom >= MAX_ZOOM;
+    zoomOut.style.opacity = zoomOut.disabled ? '.4' : '1';
+    zoomIn.style.opacity = zoomIn.disabled ? '.4' : '1';
+  }
+
+  zoomOut.addEventListener('click', () => {
+    zoom = Math.max(MIN_ZOOM, zoom - STEP);
+    applyZoom();
+  });
+
+  zoomIn.addEventListener('click', () => {
+    zoom = Math.min(MAX_ZOOM, zoom + STEP);
+    applyZoom();
+  });
+
+  applyZoom();
+})();
+</script>
 
 </body>
 </html>
